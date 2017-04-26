@@ -22,30 +22,8 @@
 
 import UIKit
 
-public class Theme: NSObject {
-    let name: String
-    let themesDictionary: NSDictionary
+public protocol ThemeProtocol {
     
-    init(named name: String, themesDictionary: NSDictionary) {
-        self.name = name
-        self.themesDictionary = themesDictionary
-    }
+    static func setTheme(with themeName: String) -> (() -> (Void))?
     
-    public func string(forKeyPath keyPath: String) -> String? {
-        let value = themesDictionary.value(forKeyPath: keyPath)
-        switch value {
-        case let values as NSDictionary:
-            return (values[name] as? String) ?? (values["*"] as? String)
-        default:
-            return value as? String
-        }
-    }
-    
-    public func color(forKeyPath keyPath: String) -> UIColor? {
-        if let string = string(forKeyPath: keyPath) {
-            return UIColor(string: string)
-        } else {
-            return nil
-        }
-    }
 }
