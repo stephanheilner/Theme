@@ -29,7 +29,7 @@ public class ThemeController: NSObject {
     
     public var themeName = "" {
         didSet {
-            theme?.setTheme(with: themeName)?()
+            theme?.setTheme(themeName: themeName)
 
             themeObservers.notify()
         }
@@ -38,7 +38,7 @@ public class ThemeController: NSObject {
     public func registerTheme(theme: Theme.Type) {
         self.theme = theme
         
-        theme.setTheme(with: themeName)?()
+        theme.setTheme(themeName: themeName)
     }
     
     let themeObservers = ObserverSet<Void>()

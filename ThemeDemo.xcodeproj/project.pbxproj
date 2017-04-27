@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D4A675B61EB103A500355089 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A675B51EB103A500355089 /* Theme.swift */; };
+		D4A675B61EB103A500355089 /* DemoTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A675B51EB103A500355089 /* DemoTheme.swift */; };
 		D9D608DA1C31B10700B10DA6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D608D91C31B10700B10DA6 /* AppDelegate.swift */; };
 		D9D608DC1C31B10700B10DA6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D608DB1C31B10700B10DA6 /* ViewController.swift */; };
 		D9D608E11C31B10700B10DA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9D608E01C31B10700B10DA6 /* Assets.xcassets */; };
@@ -20,7 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		D4A675B51EB103A500355089 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		D4A675B51EB103A500355089 /* DemoTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoTheme.swift; sourceTree = "<group>"; };
 		D9D608D61C31B10700B10DA6 /* ThemeDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThemeDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9D608D91C31B10700B10DA6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D9D608DB1C31B10700B10DA6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -69,7 +69,7 @@
 			children = (
 				D9D608D91C31B10700B10DA6 /* AppDelegate.swift */,
 				D9D608EF1C31B44E00B10DA6 /* AppSettings.swift */,
-				D4A675B51EB103A500355089 /* Theme.swift */,
+				D4A675B51EB103A500355089 /* DemoTheme.swift */,
 				D9D608F41C31B60200B10DA6 /* ThemeAwareNavigationController.swift */,
 				D9D608F61C31B6BD00B10DA6 /* ThemeAwareTableView.swift */,
 				D9D608F71C31B6BD00B10DA6 /* ThemeAwareTableViewCell.swift */,
@@ -169,7 +169,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9D608DC1C31B10700B10DA6 /* ViewController.swift in Sources */,
-				D4A675B61EB103A500355089 /* Theme.swift in Sources */,
+				D4A675B61EB103A500355089 /* DemoTheme.swift in Sources */,
 				D9D608DA1C31B10700B10DA6 /* AppDelegate.swift in Sources */,
 				D9D608F51C31B60200B10DA6 /* ThemeAwareNavigationController.swift in Sources */,
 				D9D608F01C31B44E00B10DA6 /* AppSettings.swift in Sources */,

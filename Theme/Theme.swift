@@ -24,6 +24,6 @@ import Foundation
 
 public protocol Theme {
     
-    static func setTheme(with themeName: String) -> (() -> (Void))?
+    static func setTheme(themeName: String)
     
 }

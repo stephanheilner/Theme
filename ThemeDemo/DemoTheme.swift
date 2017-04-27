@@ -20,7 +20,7 @@
 // THE SOFTWARE.
 //
 
-import Foundation
+import UIKit
 import Theme
 
 struct DemoTheme: Theme {
@@ -64,14 +64,14 @@ struct DemoTheme: Theme {
         tableViewBackgroundColor = UIColor(string: "#f3e7d0")
     }
     
-    static func setTheme(with themeName: String) -> (() -> (Void))? {
+    static func setTheme(themeName: String) {
         switch themeName {
         case "night":
-            return DemoTheme.themeNight
+            themeNight()
         case "sepia":
-            return DemoTheme.themeSepia
+            themeSepia()
         default:
-            return DemoTheme.themeDefault
+            themeDefault()
         }
     }
     
