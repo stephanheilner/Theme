@@ -25,7 +25,7 @@ import Foundation
 public class ThemeController: NSObject {
     public static var shared = ThemeController()
     
-    fileprivate var theme: ThemeProtocol.Type?
+    fileprivate var theme: Theme.Type?
     
     public var themeName = "" {
         didSet {
@@ -35,7 +35,7 @@ public class ThemeController: NSObject {
         }
     }
     
-    public func registerTheme(theme: ThemeProtocol.Type) {
+    public func registerTheme(theme: Theme.Type) {
         self.theme = theme
         
         theme.setTheme(with: themeName)?()

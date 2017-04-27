@@ -35,7 +35,7 @@ class ThemeAwareTableView: UITableView {
     }
     
     func didChange() {
-        separatorColor = Theme.tableViewSeparatorColor
-        backgroundColor = Theme.tableViewBackgroundColor
+        separatorColor = DemoTheme.tableViewSeparatorColor
+        backgroundColor = DemoTheme.tableViewBackgroundColor
     }
 }

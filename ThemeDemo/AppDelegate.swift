@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        ThemeController.shared.registerTheme(theme: Theme.self)
+        ThemeController.shared.registerTheme(theme: DemoTheme.self)
         
         let viewController = ViewController(appSettings: appSettings)
         let navigationController = ThemeAwareNavigationController(rootViewController: viewController)
@@ -45,7 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func didChange() {
-        window?.tintColor = Theme.tintColor
+        window?.tintColor = DemoTheme.tintColor
     }
 }
 

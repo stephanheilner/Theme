@@ -37,8 +37,8 @@ class ThemeAwareTableViewCell: UITableViewCell {
     }
     
     func didChange() {
-        textLabel?.textColor = Theme.tableViewCellTextColor
-        backgroundColor = Theme.tableViewCellBackgroundColor
-        selectedBackgroundView?.backgroundColor = Theme.tableViewCellSelectedBackgroundColor
+        textLabel?.textColor = DemoTheme.tableViewCellTextColor
+        backgroundColor = DemoTheme.tableViewCellBackgroundColor
+        selectedBackgroundView?.backgroundColor = DemoTheme.tableViewCellSelectedBackgroundColor
     }
 }

@@ -23,7 +23,7 @@
 import Foundation
 import Theme
 
-struct Theme: ThemeProtocol {
+struct DemoTheme: Theme {
     
     static var tintColor: UIColor?
     static var tableViewCellTextColor: UIColor?
@@ -67,11 +67,11 @@ struct Theme: ThemeProtocol {
     static func setTheme(with themeName: String) -> (() -> (Void))? {
         switch themeName {
         case "night":
-            return Theme.themeNight
+            return DemoTheme.themeNight
         case "sepia":
-            return Theme.themeSepia
+            return DemoTheme.themeSepia
         default:
-            return Theme.themeDefault
+            return DemoTheme.themeDefault
         }
     }
     

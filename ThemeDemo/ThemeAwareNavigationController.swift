@@ -31,7 +31,7 @@ class ThemeAwareNavigationController: UINavigationController {
     }
     
     func didChange() {
-        switch Theme.navigationBarBarStyle ?? "" {
+        switch DemoTheme.navigationBarBarStyle ?? "" {
         case "black":
             navigationBar.barStyle = .black
             toolbar.barStyle = .black

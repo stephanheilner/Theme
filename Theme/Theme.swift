@@ -20,9 +20,9 @@
 // THE SOFTWARE.
 //
 
-import UIKit
+import Foundation
 
-public protocol ThemeProtocol {
+public protocol Theme {
     
     static func setTheme(with themeName: String) -> (() -> (Void))?
     
