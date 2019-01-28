@@ -21,7 +21,6 @@
 //
 
 import Foundation
-import ObserverSet
 
 public class ThemeController: NSObject {
     public static var shared = ThemeController()
@@ -32,7 +31,7 @@ public class ThemeController: NSObject {
         didSet {
             theme?.setTheme(themeName: themeName)
 
-            themeObservers.notify(())
+            NotificationCenter.default.post(name: Notification.Name.ThemeDidChange, object: nil)
         }
     }
     
@@ -41,18 +40,6 @@ public class ThemeController: NSObject {
         
         theme.setTheme(themeName: themeName)
         
-        themeObservers.notify(())
+        NotificationCenter.default.post(name: Notification.Name.ThemeDidChange, object: nil)
     }
-    
-    let themeObservers = ObserverSet<()>()
-    
-    public func observeTheme<T: AnyObject>(_ object: T, _ f: @escaping (T) -> () -> Void) {
-        themeObservers.add(object) { (T) -> (()) -> Void in
-            return { _ in
-                f(object)()
-            }
-        }
-        f(object)()
-    }
-    
 }

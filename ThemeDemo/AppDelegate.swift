@@ -24,7 +24,7 @@ import UIKit
 import Theme
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, ThemeObserver {
     let appSettings = AppSettings()
     var window: UIWindow?
 
@@ -39,7 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         
         // Observe theme changes
-        ThemeController.shared.observeTheme(self, type(of: self).themeDidChange)
+        observeTheme()
         
         return true
     }
@@ -47,5 +47,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func themeDidChange() {
         window?.tintColor = DemoTheme.tintColor
     }
+    
+    deinit {
+        removeThemeObserver()
+    }
+    
 }
 

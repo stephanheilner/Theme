@@ -6,5 +6,4 @@ target 'ThemeDemo' do
     use_frameworks!
     
     pod 'Theme', :path => '.'
-    pod 'ObserverSet'
 end

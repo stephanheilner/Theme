@@ -22,16 +22,19 @@
 
 import UIKit
 
-public protocol ThemeObserver {}
-
-extension ThemeObserver where Self: UIView {
-    public func observeTheme(_ f: @escaping (Self) -> () -> Void) {
-        ThemeController.shared.observeTheme(self, f)
-    }
+extension Notification.Name {
+    public static let ThemeDidChange = Notification.Name("com.crosswaterbridge.ThemeDidChangeNotification")
 }
 
-extension ThemeObserver where Self: UIViewController {
-    public func observeTheme(_ f: @escaping (Self) -> () -> Void) {
-        ThemeController.shared.observeTheme(self, f)
+@objc public protocol ThemeObserver {
+    @objc func themeDidChange()
+}
+
+extension ThemeObserver {
+    public func observeTheme() {
+        NotificationCenter.default.addObserver(self, selector: #selector(themeDidChange), name: Notification.Name.ThemeDidChange, object: nil)
+    }
+    public func removeThemeObserver() {
+        NotificationCenter.default.removeObserver(self, name: Notification.Name.ThemeDidChange, object: nil)
     }
 }

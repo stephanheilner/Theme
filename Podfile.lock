@@ -1,24 +1,16 @@
 PODS:
-  - ObserverSet (1.0.1)
-  - Theme (4.2.1):
-    - ObserverSet
+  - Theme (5.0.0)
 
 DEPENDENCIES:
-  - ObserverSet
   - Theme (from `.`)
-
-SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
-    - ObserverSet
 
 EXTERNAL SOURCES:
   Theme:
     :path: "."
 
 SPEC CHECKSUMS:
-  ObserverSet: aa43b4625c2bb0b31b70c7e612b5b780bdd2b7bc
-  Theme: 463e5562857d92d97b370e4c407311dc717e0518
+  Theme: 9f8f4777b57f1e44828e3940c9238a39acb492e3
 
-PODFILE CHECKSUM: 58be3563cf9bf3f7c895b2c05474db9e7ed70f19
+PODFILE CHECKSUM: 25ca306a4ac02d2eeff3d343216620e143338f6e
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.6.0.rc.1

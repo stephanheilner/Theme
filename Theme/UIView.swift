@@ -23,5 +23,5 @@
 import UIKit
 
 extension UIView: ThemeObserver {
-    
+    open func themeDidChange() {}
 }
