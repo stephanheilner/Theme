@@ -31,7 +31,7 @@ public class ThemeController: NSObject {
         didSet {
             theme?.setTheme(themeName: themeName)
 
-            NotificationCenter.default.post(name: Notification.Name.ThemeDidChange, object: nil)
+            NotificationCenter.default.post(name: .ThemeDidChange, object: self)
         }
     }
     
@@ -40,6 +40,6 @@ public class ThemeController: NSObject {
         
         theme.setTheme(themeName: themeName)
         
-        NotificationCenter.default.post(name: Notification.Name.ThemeDidChange, object: nil)
+        NotificationCenter.default.post(name: .ThemeDidChange, object: self)
     }
 }

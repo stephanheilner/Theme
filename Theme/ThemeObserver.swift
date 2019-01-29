@@ -32,9 +32,9 @@ extension Notification.Name {
 
 extension ThemeObserver {
     public func observeTheme() {
-        NotificationCenter.default.addObserver(self, selector: #selector(themeDidChange), name: Notification.Name.ThemeDidChange, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(themeDidChange), name: .ThemeDidChange, object: self)
     }
     public func removeThemeObserver() {
-        NotificationCenter.default.removeObserver(self, name: Notification.Name.ThemeDidChange, object: nil)
+        NotificationCenter.default.removeObserver(self, name: .ThemeDidChange, object: self)
     }
 }
