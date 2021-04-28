@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2015 Hilton Campbell
+// Copyright (c) 2021 GreenJell0
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -21,18 +21,25 @@
 //
 
 import Foundation
-import Signals
+import Combine
+
+public extension Notification.Name {
+    static let themeChanged = Notification.Name("Theme.ThemeChanged")
+}
 
 public class ThemeController: NSObject {
     public static var shared = ThemeController()
     
-    fileprivate var theme: Theme.Type?
+    private var theme: Theme.Type?
+
+    let themeChangedPublisher = NotificationCenter.Publisher(center: .default, name: .themeChanged)
+    var subscribers = [AnyCancellable]()
     
     public var themeName = "" {
         didSet {
             theme?.setTheme(themeName: themeName)
 
-            themeObservers.fire(())
+            NotificationCenter.default.post(name: .themeChanged, object: themeName)
         }
     }
     
@@ -41,14 +48,7 @@ public class ThemeController: NSObject {
         
         theme.setTheme(themeName: themeName)
         
-        themeObservers.fire(())
-    }
-    
-    let themeObservers = Signal<Void>()
-    
-    public func observeTheme<T: AnyObject>(_ object: T, _ callback: @escaping () -> Void) {
-        themeObservers.subscribe(with: object, callback: callback)
-        callback()
+        NotificationCenter.default.post(name: .themeChanged, object: themeName)
     }
     
 }

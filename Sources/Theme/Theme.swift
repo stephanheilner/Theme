@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2015 Hilton Campbell
+// Copyright (c) 2021 GreenJell0
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -21,7 +21,6 @@
 //
 
 import Foundation
-import Signals
 
 public protocol Theme {
     static func setTheme(themeName: String)

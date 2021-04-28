@@ -1,5 +1,5 @@
 //
-// Copyright (c) 2015 Hilton Campbell
+// Copyright (c) 2021 GreenJell0
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -27,15 +27,17 @@ public protocol ThemeObserver {}
 
 extension ThemeObserver where Self: UIView {
     public func observeTheme(_ callback: @escaping () -> Void) {
-        ThemeController.shared.themeObservers.subscribe(with: self, callback: callback)
-        callback()
+        ThemeController.shared.themeChangedPublisher.sink { _ in
+            callback()
+        }.store(in: &ThemeController.shared.subscribers)
     }
 }
 
 extension ThemeObserver where Self: UIViewController {
     public func observeTheme(_ callback: @escaping () -> Void) {
-        ThemeController.shared.themeObservers.subscribe(with: self, callback: callback)
-        callback()
+        ThemeController.shared.themeChangedPublisher.sink { _ in
+            callback()
+        }.store(in: &ThemeController.shared.subscribers)
     }
 }
 #endif
